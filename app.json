@@ -1,0 +1,62 @@
+{
+  "expo": {
+    "name": "RunIstanbul",
+    "slug": "runistanbul",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./src/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.runistanbul.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Bu uygulama koşu sırasında konumunuzu takip etmek için konum erişimi gerektirir.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Bu uygulama koşu sırasında konumunuzu takip etmek için konum erişimi gerektirir.",
+        "UIBackgroundModes": [
+          "location",
+          "background-processing"
+        ]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.runistanbul.app",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "WAKE_LOCK",
+        "VIBRATE",
+        "INTERNET",
+        "ACCESS_NETWORK_STATE"
+      ]
+    },
+    "web": {
+      "favicon": "./src/assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Bu uygulama koşu sırasında konumunuzu takip etmek için konum erişimi gerektirir."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "your-project-id"
+      }
+    }
+  }
+} 

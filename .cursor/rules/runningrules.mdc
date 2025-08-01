@@ -1,0 +1,117 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Istanbul Running Game - .cursorrules
+
+## Project Overview
+You are building "RunIstanbul" - a location-based running game specifically designed for Istanbul, Turkey. The app gamifies running by allowing users to capture real geographical areas while running through Istanbul's neighborhoods.
+
+## Tech Stack
+- **Frontend**: React Native with Expo
+- **Backend**: Node.js with Express
+- **Database**: PostgreSQL with PostGIS for geospatial data
+- **Real-time**: Socket.io for live gameplay
+- **Maps**: React Native Maps with custom Istanbul overlays
+- **Authentication**: Firebase Auth
+- **Storage**: Firebase Storage for user avatars
+- **State Management**: Redux Toolkit with RTK Query
+
+## Core Features to Implement
+1. **Territory Capture System**
+   - Grid-based territory system overlaid on Istanbul map
+   - Real-time territory ownership updates
+   - Capture mechanics based on GPS tracking during runs
+
+2. **Istanbul-Specific Features**
+   - Custom Istanbul neighborhood boundaries
+   - Historical landmarks as special capture points
+   - Bosphorus bridge challenges
+   - District-based leaderboards (Beşiktaş, Kadıköy, etc.)
+
+3. **Running Mechanics**
+   - GPS tracking with accuracy validation
+   - Speed and distance calculations
+   - Route recording and sharing
+   - Personal running statistics
+
+4. **Social Features**
+   - Local Istanbul running community
+   - Neighborhood-based teams
+   - Weekly district challenges
+   - Running buddy system
+
+## Code Style Guidelines
+- Use TypeScript for all JavaScript code
+- Follow React Native best practices
+- Implement proper error handling for GPS and network issues
+- Use meaningful Turkish and English variable names where appropriate
+- Comment complex geospatial calculations
+- Prioritize performance for real-time map updates
+
+## File Structure
+```
+src/
+  components/
+    map/
+    game/
+    running/
+    ui/
+  screens/
+    auth/
+    game/
+    profile/
+    leaderboard/
+  services/
+    api/
+    gps/
+    game/
+  utils/
+    istanbul/
+    calculations/
+  types/
+```
+
+## Key Implementation Notes
+- Handle Turkish language support (i18n)
+- Account for Istanbul's unique geography (two continents)
+- Implement offline mode for GPS tracking
+- Optimize for battery usage during long runs
+- Handle Turkish character encoding properly
+- Consider Islamic prayer times for notification scheduling
+
+## Istanbul-Specific Data Requirements
+- Neighborhood (mahalle) polygons
+- District (ilçe) boundaries
+- Historical landmarks coordinates
+- Popular running routes (Maçka Park, Emirgan, Bebek coastal)
+- Public transportation stops for route planning
+
+## Performance Considerations
+- Minimize battery drain during GPS tracking
+- Efficient territory polygon rendering
+- Smart caching of map tiles
+- Optimize real-time updates frequency
+- Handle poor GPS signal in narrow Istanbul streets
+
+## Security & Privacy
+- Secure GPS data transmission
+- User location privacy controls
+- Prevent GPS spoofing/cheating
+- KVKK (Turkish GDPR) compliance
+- Secure territory ownership validation
+
+## Testing Strategy
+- Unit tests for geospatial calculations
+- Integration tests for capture mechanics
+- GPS simulation for testing
+- Performance testing on various devices
+- Test with Istanbul's specific GPS challenges
+
+## Deployment Notes
+- Consider Turkish hosting providers
+- Handle Turkish timezone (UTC+3)
+- Arabic numeral support
+- Turkish currency (TL) for any premium features
+- App Store Turkey compliance

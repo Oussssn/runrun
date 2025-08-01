@@ -1,0 +1,15 @@
+/Users/oguss/Projects/runningapp/backend-dotnet/RunIstanbul.Application/obj/Debug/net8.0/RunIstanbul.Application.csproj.AssemblyReference.cache
+/Users/oguss/Projects/runningapp/backend-dotnet/RunIstanbul.Application/obj/Debug/net8.0/RunIstanbul.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/oguss/Projects/runningapp/backend-dotnet/RunIstanbul.Application/obj/Debug/net8.0/RunIstanbul.Application.AssemblyInfoInputs.cache
+/Users/oguss/Projects/runningapp/backend-dotnet/RunIstanbul.Application/obj/Debug/net8.0/RunIstanbul.Application.AssemblyInfo.cs
+/Users/oguss/Projects/runningapp/backend-dotnet/RunIstanbul.Application/obj/Debug/net8.0/RunIstanbul.Application.csproj.CoreCompileInputs.cache
+/Users/oguss/Projects/runningapp/backend-dotnet/RunIstanbul.Application/bin/Debug/net8.0/RunIstanbul.Application.deps.json
+/Users/oguss/Projects/runningapp/backend-dotnet/RunIstanbul.Application/bin/Debug/net8.0/RunIstanbul.Application.dll
+/Users/oguss/Projects/runningapp/backend-dotnet/RunIstanbul.Application/bin/Debug/net8.0/RunIstanbul.Application.pdb
+/Users/oguss/Projects/runningapp/backend-dotnet/RunIstanbul.Application/bin/Debug/net8.0/RunIstanbul.Domain.dll
+/Users/oguss/Projects/runningapp/backend-dotnet/RunIstanbul.Application/bin/Debug/net8.0/RunIstanbul.Domain.pdb
+/Users/oguss/Projects/runningapp/backend-dotnet/RunIstanbul.Application/obj/Debug/net8.0/RunIstan.E64CD453.Up2Date
+/Users/oguss/Projects/runningapp/backend-dotnet/RunIstanbul.Application/obj/Debug/net8.0/RunIstanbul.Application.dll
+/Users/oguss/Projects/runningapp/backend-dotnet/RunIstanbul.Application/obj/Debug/net8.0/refint/RunIstanbul.Application.dll
+/Users/oguss/Projects/runningapp/backend-dotnet/RunIstanbul.Application/obj/Debug/net8.0/RunIstanbul.Application.pdb
+/Users/oguss/Projects/runningapp/backend-dotnet/RunIstanbul.Application/obj/Debug/net8.0/ref/RunIstanbul.Application.dll
