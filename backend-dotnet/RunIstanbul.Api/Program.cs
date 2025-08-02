@@ -8,6 +8,9 @@ using RunIstanbul.Domain.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Configure port
+builder.WebHost.UseUrls("http://localhost:5001");
+
 // Add services to the container.
 builder.Services.AddControllers();
 

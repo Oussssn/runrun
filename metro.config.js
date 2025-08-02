@@ -1,18 +1,12 @@
-const { getDefaultConfig } = require('@expo/metro-config');
+const { getDefaultConfig } = require('expo/metro-config');
 
 const config = getDefaultConfig(__dirname);
 
-// Minimize file watching
+// Dosya izleme sistemini minimize et
 config.watchFolders = [];
-config.resolver.sourceExts = ['js', 'jsx', 'ts', 'tsx'];
-config.resolver.assetExts = ['png', 'jpg', 'jpeg', 'gif', 'webp', 'svg'];
+config.maxWorkers = 1;
 
-// Reduce file watching
-config.watcher = {
-  healthCheck: {
-    enabled: false,
-  },
-  additionalExts: [],
-};
+// Cache ayarlarını optimize et
+config.cacheStores = [];
 
 module.exports = config;

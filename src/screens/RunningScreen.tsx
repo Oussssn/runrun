@@ -248,11 +248,16 @@ const RunningScreen: React.FC = () => {
       
       if (response.success) {
         console.log('Run saved successfully:', response.data);
+        Alert.alert('Başarılı!', 'Koşu kaydedildi!');
       } else {
         console.error('Failed to save run:', response.error);
+        // Don't crash the app, just show a warning
+        Alert.alert('Uyarı', 'Koşu kaydedilemedi (Demo modu). Backend bağlantısı yok.');
       }
     } catch (error) {
       console.error('Error saving run:', error);
+      // Don't crash the app, just show a warning
+      Alert.alert('Uyarı', 'Koşu kaydedilemedi (Demo modu). Backend bağlantısı yok.');
     }
   };
 

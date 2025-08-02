@@ -4,7 +4,7 @@ export interface GameState {
   isRunning: boolean;
   currentRun: {
     id: string;
-    startTime: Date | null;
+    startTime: string | null; // Changed from Date to string
     distance: number;
     duration: number;
     route: Array<{ latitude: number; longitude: number; timestamp: number }>;
@@ -32,7 +32,7 @@ const gameSlice = createSlice({
       state.isRunning = true;
       state.currentRun = {
         id: action.payload,
-        startTime: new Date(),
+        startTime: new Date().toISOString(), // Convert to string
         distance: 0,
         duration: 0,
         route: [],

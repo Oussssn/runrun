@@ -5,7 +5,7 @@ export interface User {
   email: string;
   displayName: string;
   photoURL?: string;
-  createdAt: Date;
+  createdAt: string; // Changed from Date to string
   totalDistance: number;
   totalRuns: number;
   level: number;

@@ -169,4 +169,17 @@ node_modules/
 .yarn/unplugged
 .yarn/build-state.yml
 .yarn/install-state.gz
-.pnp.* 
+.pnp.*
+
+# .NET
+backend-dotnet/**/bin/
+backend-dotnet/**/obj/
+*.dll
+*.pdb
+*.exe
+*.cache
+*.json
+!package.json
+!package-lock.json
+!app.json
+!metro.config.js 

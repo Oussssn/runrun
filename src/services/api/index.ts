@@ -38,9 +38,11 @@ export class ApiService {
         data,
       };
     } catch (error) {
+      // Return demo mode response instead of failing
+      console.warn('Backend not available, running in demo mode');
       return {
         success: false,
-        error: 'Ağ hatası oluştu',
+        error: 'Backend bağlantısı yok (Demo modu)',
       };
     }
   }
@@ -98,7 +100,6 @@ export class ApiService {
   static async createTerritory(territoryData: {
     name: string;
     district: string;
-    boundary: Array<{latitude: number; longitude: number}>;
     centerPoint: {latitude: number; longitude: number};
     type: string;
     basePoints: number;
@@ -110,17 +111,17 @@ export class ApiService {
     });
   }
 
-  // UserRun endpoints (Backend integration)
+  // Run endpoints (Backend integration)
   static async getUserRuns(userId: string): Promise<ApiResponse<any[]>> {
-    return this.request<any[]>(`/userruns/user/${userId}`);
+    return this.request<any[]>(`/users/${userId}/runs`);
   }
 
   static async getUserRunById(runId: string): Promise<ApiResponse<any>> {
-    return this.request<any>(`/userruns/${runId}`);
+    return this.request<any>(`/runs/${runId}`);
   }
 
   static async getUserRunStatistics(userId: string): Promise<ApiResponse<any>> {
-    return this.request<any>(`/userruns/user/${userId}/statistics`);
+    return this.request<any>(`/users/${userId}/statistics`);
   }
 
   static async createUserRun(runData: {
@@ -134,19 +135,20 @@ export class ApiService {
     maxSpeedKmh: number;
     caloriesBurned: number;
   }): Promise<ApiResponse<any>> {
-    return this.request<any>('/userruns', {
+    return this.request<any>('/runs', {
       method: 'POST',
       body: JSON.stringify(runData),
     });
   }
 
+  // Territory capture endpoints (Backend integration)
   static async captureTerritory(
     territoryId: string,
     userId: string
   ): Promise<ApiResponse<void>> {
-    return this.request<void>('/territories/capture', {
+    return this.request<void>(`/territories/${territoryId}/capture`, {
       method: 'POST',
-      body: JSON.stringify({ territoryId, userId }),
+      body: JSON.stringify({ userId }),
     });
   }
 
@@ -154,7 +156,7 @@ export class ApiService {
     return this.request<string[]>(`/users/${userId}/territories`);
   }
 
-  // Leaderboard endpoints
+  // Leaderboard endpoints (Backend integration)
   static async getLeaderboard(): Promise<ApiResponse<any[]>> {
     return this.request<any[]>('/leaderboard');
   }
@@ -163,7 +165,7 @@ export class ApiService {
     return this.request<any[]>(`/leaderboard/district/${district}`);
   }
 
-  // User stats endpoints
+  // User profile endpoints (Backend integration)
   static async updateUserStats(
     userId: string,
     stats: Partial<User>
@@ -175,8 +177,6 @@ export class ApiService {
   }
 
   static async getUserProfile(userId: string): Promise<ApiResponse<User>> {
-    return this.request<User>(`/users/${userId}`);
+    return this.request<User>(`/users/${userId}/profile`);
   }
-}
-
-export default ApiService; 
+} 

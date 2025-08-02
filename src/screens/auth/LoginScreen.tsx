@@ -22,7 +22,7 @@ const LoginScreen: React.FC = () => {
       email: email,
       displayName: 'Test Kullanıcı',
       photoURL: undefined,
-      createdAt: new Date(),
+      createdAt: new Date().toISOString(), // Convert to string
       totalDistance: 0,
       totalRuns: 0,
       level: 1,
@@ -39,20 +39,17 @@ const LoginScreen: React.FC = () => {
           RunIstanbul
         </Text>
         <Text style={[styles.subtitle, { color: theme.colors.textSecondary }]}>
-          İstanbul'u koşarak fethet
+          İstanbul'u koşarak keşfet
         </Text>
       </View>
 
       <View style={styles.form}>
         <TextInput
-          style={[
-            styles.input,
-            {
-              backgroundColor: theme.colors.surface,
-              color: theme.colors.text,
-              borderColor: theme.colors.border,
-            },
-          ]}
+          style={[styles.input, { 
+            backgroundColor: theme.colors.surface,
+            color: theme.colors.text,
+            borderColor: theme.colors.border
+          }]}
           placeholder="E-posta"
           placeholderTextColor={theme.colors.textSecondary}
           value={email}
@@ -62,14 +59,11 @@ const LoginScreen: React.FC = () => {
         />
 
         <TextInput
-          style={[
-            styles.input,
-            {
-              backgroundColor: theme.colors.surface,
-              color: theme.colors.text,
-              borderColor: theme.colors.border,
-            },
-          ]}
+          style={[styles.input, { 
+            backgroundColor: theme.colors.surface,
+            color: theme.colors.text,
+            borderColor: theme.colors.border
+          }]}
           placeholder="Şifre"
           placeholderTextColor={theme.colors.textSecondary}
           value={password}
@@ -81,13 +75,13 @@ const LoginScreen: React.FC = () => {
           style={[styles.loginButton, { backgroundColor: theme.colors.primary }]}
           onPress={handleLogin}
         >
-          <Text style={[styles.buttonText, { color: theme.colors.background }]}>
+          <Text style={[styles.loginButtonText, { color: theme.colors.onPrimary }]}>
             Giriş Yap
           </Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.forgotPassword}>
-          <Text style={[styles.forgotText, { color: theme.colors.primary }]}>
+          <Text style={[styles.forgotPasswordText, { color: theme.colors.primary }]}>
             Şifremi Unuttum
           </Text>
         </TouchableOpacity>
@@ -98,7 +92,7 @@ const LoginScreen: React.FC = () => {
           Hesabın yok mu?{' '}
         </Text>
         <TouchableOpacity>
-          <Text style={[styles.registerText, { color: theme.colors.primary }]}>
+          <Text style={[styles.signupText, { color: theme.colors.primary }]}>
             Kayıt Ol
           </Text>
         </TouchableOpacity>
@@ -111,11 +105,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+    justifyContent: 'center',
   },
   header: {
-    flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: 40,
   },
   title: {
     fontSize: 32,
@@ -127,8 +121,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   form: {
-    flex: 1,
-    justifyContent: 'center',
+    marginBottom: 30,
   },
   input: {
     height: 50,
@@ -143,31 +136,30 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 16,
+    marginTop: 8,
   },
-  buttonText: {
+  loginButtonText: {
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: 'bold',
   },
   forgotPassword: {
     alignItems: 'center',
     marginTop: 16,
   },
-  forgotText: {
+  forgotPasswordText: {
     fontSize: 14,
   },
   footer: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingBottom: 20,
   },
   footerText: {
     fontSize: 14,
   },
-  registerText: {
+  signupText: {
     fontSize: 14,
-    fontWeight: '600',
+    fontWeight: 'bold',
   },
 });
 
